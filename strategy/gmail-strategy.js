@@ -4,13 +4,13 @@ const data = require('../schema/schema');
 const express = require('express');
 const session = require('express-session');
 const { error } = require('console');
-
-
+const { env } = require('process');
+require('dotenv').config();
 const app = express();
 
     passport.use(new GoogleStrategy({
-    clientID:'850703769425-k37k7hrke2vmam4uncj9c6sfv52hh3tk.apps.googleusercontent.com',
-    clientSecret:'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',
+    clientID: process.env.CLIENT_ID,
+    clientSecret:process.env.CLIENT_SECRET,
     callbackURL:'http://localhost:3000/api/auth/google/redirect',
     scope:['profile','email']
 },
