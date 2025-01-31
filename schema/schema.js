@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const { type } = require('os');
-const connect = mongoose.connect('mongodb+srv://moses1model:knHAaE7cwIluJA7t@cluster0.jhxjl.mongodb.net/user');
+require('dotenv').config();
+const connect = mongoose.connect(process.env.DATABASE);
 
 connect.then(()=>{
     console.log('database connected');
