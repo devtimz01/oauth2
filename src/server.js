@@ -39,7 +39,7 @@ passport.deserializeUser(async(id,done)=>{
 
 app.get('/api/auth/google', passport.authenticate('google'));
 app.get('/api/auth/google/redirect', passport.authenticate('google'),(req,res)=>{
-    res.sendStatus(200)
+   return res.sendStatus(200)
 })
 
 const port = 3000;
